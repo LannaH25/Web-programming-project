@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Real Estate</title>
+  <link rel="stylesheet" href="frontend/css/spapp.css" />
+  <link rel="stylesheet" href="frontend/css/main.css" />
+  <link rel="stylesheet" href="/frontend/css/register.css">
+  <link rel="stylesheet" href="/frontend/css/login.css">
+  <link rel="stylesheet" href="/frontend/css/home.css">
+  <link rel="stylesheet" href="/frontend/css/contact.css">
+  <link rel="stylesheet" href="/frontend/css/browse.css">
+  
+  <link rel="icon" type="image/x-icon" href="frontend/assets/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#browse">Browse Properties</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#login">Log in</a>
+    </nav>
+  </header>
+  <main id="spapp">
+    <section id="home" data-load="frontend/views/home.html"></section>
+    <section id="browse" data-load="frontend/views/browse.html"></section>
+    <section id="favorites" data-load="frontend/views/favorites.html"></section>
+    <section id="contact" data-load="frontend/views/contact.html"></section>
+    <section id="login" data-load="frontend/views/login.html"></section>
+    <section id="register" data-load="frontend/views/register.html"></section>
+  </main> 
+   
+  <script src="frontend/js/jquery.min.js"></script>
+  <script src="frontend/js/jquery.spapp.min.js"></script>
+  <script src="frontend/js/app.js"></script>
+</body>
+</html>

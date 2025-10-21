@@ -1,0 +1,95 @@
+   @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+:root { --bg: #ffffff;
+     --panel: #161a22; 
+     --text: #474646; 
+     --muted: #a0a6b0; 
+     --radius: 10px; 
+     --shadow: 0 6px 20px rgba(0,0,0,.25); } 
+
+     * { 
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+     } 
+
+     html, body { 
+        height: 100%;
+     } 
+
+     body { 
+        background: var(--bg); 
+        color: var(--text); 
+        font-family: 'PT Sans', Arial, sans-serif;
+    } 
+      
+    header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: var(--bg); 
+  backdrop-filter: blur(8px);
+  border: none;
+  height: 10.7vh; 
+  display: flex;
+  align-items: center;       
+  justify-content: center;   
+ 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+
+#nav a {
+  color: #474646;             
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+
+#nav a:hover {
+  background-color: #e0e0e0;  
+  transform: translateY(-1px);
+}
+
+#nav a.current {
+  color: #c9a15b;     
+  font-weight: 700;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    height: 60px;
+  }
+
+  #nav {
+    padding: 0 1rem;
+    justify-content: space-between;
+  }
+
+  #nav a {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+    
+    main#spapp { 
+            padding: 16px; 
+            max-width: 100%;
+            margin: 0 auto;
+         }
