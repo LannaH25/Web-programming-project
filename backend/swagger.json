@@ -1,0 +1,110 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "WEB Milestone 4 API",
+    "version": "1.0.0",
+    "description": "API for Admins, Messages, and Favorites"
+  },
+  "servers": [
+    {
+      "url": "http://localhost/WEB%20MILESTONE%204/backend",
+      "description": "Local XAMPP server"
+    }
+  ],
+  "paths": {
+    "/admins/{id}": {
+      "get": {
+        "summary": "Get admin by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" },
+            "description": "ID of the admin"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Admin details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "integer" },
+                    "name": { "type": "string" },
+                    "email": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "description": "Admin not found" }
+        }
+      }
+    },
+    "/messages/{id}": {
+      "get": {
+        "summary": "Get message by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Message details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "integer" },
+                    "sender": { "type": "string" },
+                    "content": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "description": "Message not found" }
+        }
+      }
+    },
+    "/favorites/{id}": {
+      "get": {
+        "summary": "Get favorite by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Favorite details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "integer" },
+                    "user_id": { "type": "integer" },
+                    "item_id": { "type": "integer" }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "description": "Favorite not found" }
+        }
+      }
+    }
+  }
+}
