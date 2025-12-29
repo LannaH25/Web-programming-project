@@ -4,38 +4,35 @@ require_once __DIR__ . '/BaseDao.php';
 class UsersDao extends BaseDao {
 
     public function __construct() {
-        parent::__construct('users');
+        parent::__construct('users', 'User_ID');
     }
 
-    public function add($user) {
+    public function add(array $user): array {
         $this->insert($user);
         return $user;
     }
 
-    public function getAllUsers() {
+    public function getAllUsers(): array {
         return $this->getAll();
     }
 
-    public function getById($id) {
-        return parent::getById($id);
-    }
+    
+    public function getById($id): ?array { return parent::getById($id); }
 
-   
-    public function getByEmail($email) {
-        $stmt = $this->connection->prepare("SELECT * FROM users WHERE email = :email");
-        $stmt->bindParam(':email', $email);
+
+    public function getByEmail(string $email): ?array {
+        $stmt = $this->connection->prepare("SELECT * FROM users WHERE Email = :email");
+        $stmt->bindValue(':email', $email);
         $stmt->execute();
-        return $stmt->fetch();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ?: null;
     }
 
-  
-    public function updateUser($id, $user) {
-        $this->update($id, $user);
-        return $user;
+    public function updateUser(int $id, array $user): bool {
+        return $this->update($id, $user);
     }
 
- 
-    public function deleteUser($id) {
-        $this->delete($id);
+    public function deleteUser($id): bool {
+        return $this->delete($id);
     }
 }

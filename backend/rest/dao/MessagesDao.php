@@ -3,7 +3,7 @@ require_once 'BaseDao.php';
 
 class MessagesDao extends BaseDao {
     public function __construct() {
-        parent::__construct("messages");
+        parent::__construct("messages", 'Message_ID');
     }
 
      public function get_by_id($id){
