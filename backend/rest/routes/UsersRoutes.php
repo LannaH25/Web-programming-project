@@ -14,8 +14,8 @@ $service = new UsersService();
  * )
  */
 Flight::route('GET /users', function() use ($service) {
-    protectRoute();                  // check JWT
-    $user = getCurrentUser();        // get authenticated user
+    protectRoute();                  
+    $user = getCurrentUser();       
     logRequest($user['sub'] ?? null);
 
     $users = $service->getAllUsers();
