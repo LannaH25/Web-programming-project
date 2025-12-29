@@ -13,7 +13,7 @@ class AuthService
     public function __construct()
     {
         $this->db = (new Database())->getConnection();
-        $this->secretKey = 'your_super_secret_key_here'; // change this to a strong secret
+        $this->secretKey = 'your_super_secret_key_here';
     }
 
     public function getSecretKey()
